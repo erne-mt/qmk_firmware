@@ -35,11 +35,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [1] = LAYOUT(
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    KC_ESCAPE,	   RALT(KC_Q),	KC_NUHS,	 LSFT(KC_4),		KC_PERC,		  KC_NUBS,	S(KC_6),	S(KC_RBRC),	TD(DANCE_21),	KC_BSPC,
+    KC_ESCAPE,	   RALT(KC_Q),	KC_NUHS,	 LSFT(KC_4),		KC_PERC,		  KC_GRV,	S(KC_6),	S(KC_RBRC),	TD(DANCE_21),	KC_BSPC,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
     KC_TAB,	   S(KC_0),	KC_EQL,		 S(KC_EQL),		S(KC_NUHS),		  TD(BKSL_HME),	RALT(KC_7),	RALT(KC_0),	TD(PIPE_END),	KC_ENTER,
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
-    RALT(KC_RBRC), RALT(KC_E),	KC_GRV,		 S(KC_GRV),		S(KC_2),	          RALT(KC_8),	S(KC_8),	S(KC_9),	RALT(KC_9),	TO(3),
+    RALT(KC_RBRC), RALT(KC_E),	KC_NUBS,	 S(KC_NUBS),		S(KC_2),	          RALT(KC_8),	S(KC_8),	S(KC_9),	RALT(KC_9),	TO(3),
   //---------------------------------------------------------------------------------------       ----------------------------------------------------------------------------------
 		    				 TO(0),			OSM(MOD_LSFT),		  KC_RALT,	TO(2) 
   ),
@@ -740,7 +740,7 @@ void bksl_hme_finished(qk_tap_dance_state_t *state, void *user_data) {
     switch (dance_state.step) {
         case SINGLE_TAP: register_code16(RALT(KC_MINS)); break;
         case SINGLE_HOLD: register_code16(KC_HOME); break;
-        case DOUBLE_TAP: register_code16(RALT(KC_MINS))); register_code16(RALT(KC_MINS)); break;
+        case DOUBLE_TAP: register_code16(RALT(KC_MINS)); register_code16(RALT(KC_MINS)); break;
         case DOUBLE_SINGLE_TAP: tap_code16(RALT(KC_MINS)); register_code16(RALT(KC_MINS));
     }
 }
@@ -748,7 +748,7 @@ void bksl_hme_finished(qk_tap_dance_state_t *state, void *user_data) {
 void bksl_hme_reset(qk_tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state.step) {
-        case SINGLE_TAP: unregister_code16(RALT(KC_MINS); break;
+        case SINGLE_TAP: unregister_code16(RALT(KC_MINS)); break;
         case SINGLE_HOLD: unregister_code16(KC_HOME); break;
         case DOUBLE_TAP: unregister_code16(RALT(KC_MINS)); break;
         case DOUBLE_SINGLE_TAP: unregister_code16(RALT(KC_MINS)); break;
