@@ -1,6 +1,6 @@
 
 #include QMK_KEYBOARD_H
-#include KEYMAP.GERMAN.h
+#include "keymap_german.h"
 
 enum tap_dance_codes {
   DANCE_1,
